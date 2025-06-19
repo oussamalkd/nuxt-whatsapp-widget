@@ -1,84 +1,121 @@
-<!--
-Get your module up and running quickly.
+# 📞 Nuxt WhatsApp Widget
 
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: My Module
-- Package name: my-module
-- Description: My new Nuxt module
--->
+A customizable and lightweight WhatsApp chat widget module for Nuxt 3. Let users contact you directly from your website using WhatsApp.
 
-# My Module
+![npm](https://img.shields.io/npm/v/nuxt-whatsapp-widget?color=green)  
+![license](https://img.shields.io/npm/l/nuxt-whatsapp-widget)  
+![nuxt](https://img.shields.io/badge/Nuxt-3.x-00DC82?logo=nuxt.js)
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![License][license-src]][license-href]
-[![Nuxt][nuxt-src]][nuxt-href]
+---
 
-My new Nuxt module for doing amazing things.
+## ✨ Features
 
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/my-module?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
+- 📱 Floating WhatsApp chat widget
+- 💬 Custom welcome messages
+- 👤 Customizable support agent name and avatar
+- ⚙️ Configurable via Nuxt config or component props
+- ⚡ Easy and automatic integration
 
-## Features
+---
 
-<!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
-
-## Quick Setup
-
-Install the module to your Nuxt application with one command:
+## 📦 Installation
 
 ```bash
-npx nuxi module add my-module
+npm install nuxt-whatsapp-widget
+# or
+yarn add nuxt-whatsapp-widget
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+---
 
+## 🔌 Module Setup
 
-## Contribution
+In your `nuxt.config.ts`, register the module and provide any options you want:
 
-<details>
-  <summary>Local development</summary>
-  
-  ```bash
-  # Install dependencies
-  npm install
-  
-  # Generate type stubs
-  npm run dev:prepare
-  
-  # Develop with the playground
-  npm run dev
-  
-  # Build the playground
-  npm run dev:build
-  
-  # Run ESLint
-  npm run lint
-  
-  # Run Vitest
-  npm run test
-  npm run test:watch
-  
-  # Release new version
-  npm run release
-  ```
+```ts
+export default defineNuxtConfig({
+  modules: ['nuxt-whatsapp-widget'],
 
-</details>
+  whatsappWidget: {
+    phone: '+212600000000',             // ✅ required
+    userName: 'Support Team',           // optional
+    userImage: '/icons/user-profile.svg', // optional (from /public or external URL)
+    messages: ['Hello!', 'Need help?']  // optional (string or array)
+  }
+})
+```
 
+---
 
-<!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/my-module/latest.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-version-href]: https://npmjs.com/package/my-module
+## ⚙️ Module Options
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/my-module.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-downloads-href]: https://npm.chart.dev/my-module
+| Option       | Type                  | Required | Default                         | Description                                                |
+|--------------|-----------------------|----------|----------------------------------|------------------------------------------------------------|
+| `phone`      | `string`              | ✅       | —                                | WhatsApp number (international format, e.g., `+2126...`)   |
+| `userName`   | `string`              | ❌       | `"Support"`                      | Name of the agent shown in the widget                      |
+| `userImage`  | `string`              | ❌       | `"/icons/user-profile.svg"`      | Path or URL to agent avatar (prefer `/public` or full URL) |
+| `messages`   | `string \| string[]` | ❌       | `"Hi there 👋 How can I help you ?"`                       | One or more messages shown in the widget                   |-----------------------|----------|------------------------------------------------------------|widget                   |
 
-[license-src]: https://img.shields.io/npm/l/my-module.svg?style=flat&colorA=020420&colorB=00DC82
-[license-href]: https://npmjs.com/package/my-module
+---
 
-[nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
-[nuxt-href]: https://nuxt.com
+## 🧱 Component Usage
+
+The widget is injected automatically, but you can also use the component manually and override props.
+
+### ✅ Manual Usage:
+
+```vue
+<template>
+  <WhatsappWidget
+    phone="+212699988877"
+    user-name="Support Agent"
+    user-image="/images/avatar.svg"
+    :messages="['Hi there!', 'We are here to help.']"
+  />
+</template>
+```
+
+### 🔁 Props
+
+| Prop         | Type                  | Description                               |
+|--------------|-----------------------|-------------------------------------------|
+| `phone`      | `string`              | Overrides phone number                    |
+| `userName`   | `string`              | Overrides agent name                      |
+| `userImage`  | `string`              | Overrides avatar image                    |
+| `messages`   | `string \| string[]` | Overrides welcome messages                |
+
+Props will override the values provided in `nuxt.config.ts`.
+
+---
+
+## 🧪 Local Development & Testing
+
+1. Link your local module:
+
+```bash
+cd nuxt-whatsapp-widget
+npm install
+npm link
+```
+
+2. In your Nuxt test project:
+
+```bash
+npm link nuxt-whatsapp-widget
+```
+
+3. Restart your dev server and test usage with config or component props.
+
+---
+
+## 📄 License
+
+[MIT](./LICENSE)
+
+---
+
+## 🙌 Credits
+
+Built with ❤️ by [Oussama Louelkadi](https://github.com/oussamalkd/)
+
+---

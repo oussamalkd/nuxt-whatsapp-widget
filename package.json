@@ -1,8 +1,12 @@
 {
-  "name": "my-module",
+  "name": "nuxt-whatsapp-widget",
   "version": "1.0.0",
   "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oussamalkd/nuxt-whatsapp-widget.git"
+  },
+  "keywords": ["nuxt", "nuxt-module", "whatsapp", "widget"],
   "license": "MIT",
   "type": "module",
   "exports": {
