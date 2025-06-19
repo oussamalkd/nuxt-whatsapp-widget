@@ -1,0 +1,44 @@
+.WhatsappChat__MessageContainer {
+    width: max-content;
+}
+
+.WhatsappChat__Message {
+    background-color: #fff;
+    border-radius: 7.5px;
+    margin: 0.5rem 0;
+    position: relative;
+    width: inherit;
+    max-width: 16rem;
+    padding: 6px 9px 8px 9px;
+    position: relative;
+    text-align: start;
+}
+
+.WhatsappChat__Text {
+    max-width: 90%;
+
+}
+
+.WhatsappChat__Message:last-child::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    bottom: 0;
+    left: -6px;
+    border: 10px solid transparent;
+    border-top-color: #fff;
+    border-bottom: 0;
+    border-left: 0;
+    transform: rotate(170deg);
+    z-index: 1;
+}
+
+.WhatsappChat__Time {
+    position: absolute;
+    color: rgba(0, 0, 0, .56);
+    right: 10px;
+    bottom: 5px;
+    z-index: 2;
+    font-size: 12px;
+}

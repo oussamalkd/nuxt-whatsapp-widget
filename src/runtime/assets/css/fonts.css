@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter_18pt-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+*[dir="rtl"] .whatsapp-widget .icon {
+    bottom: 2rem;
+    left: 1rem !important;
+}
