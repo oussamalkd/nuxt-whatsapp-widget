@@ -39,7 +39,7 @@ const showMessage = ref(true)
       </div>
     </div>
     <div class="chat">
-      <Message
+      <WhatsAppMessage
         :messages="messages"
       />
     </div>
