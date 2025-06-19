@@ -1,0 +1,102 @@
+.whatsapp-widget .icon {
+    cursor: pointer;
+    width:3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #fff;
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    transition: all ease-in-out 0.3s;
+}
+.whatsapp-widget .icon:hover {
+    background-color: whitesmoke;
+}
+.message-box {
+    width: 20rem;
+    height: auto;
+    min-height: 20rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.212) 0px 4px 12px 0px;
+    position: absolute;
+    bottom: 6rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url('../images/background-whatsapp.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+.message-box.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.message-box .header {
+    background: #075e54;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0 20px !important;
+    margin: 0 auto;
+}
+
+.message-box .header .profile-picture {
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.message-box .header .profile-picture img {
+    width: 100%;
+    height: auto;
+}
+
+.message-box .header .user-name {
+    font-weight: 600;
+    color: #ece5dd;
+}
+.message-box .chat {
+    flex-grow: 1;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.message-box .action {
+    background: transparent;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-box .action a {
+    display:  inline-block;
+    background: #25d366;
+    border-radius: 1rem;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    min-width: 8rem;
+}

@@ -1,6 +1,7 @@
 <template>
   <div>
-    Nuxt module playground!
+    <h1>Module Playground</h1>
+    <WhatsAppWidget />
   </div>
 </template>
 
