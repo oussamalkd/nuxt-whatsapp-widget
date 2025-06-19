@@ -3,9 +3,9 @@ import { defineNuxtModule, addPlugin, createResolver, addComponentsDir } from '@
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   phone: string
-  message?: string
-  position?: 'left' | 'right'
-  iconColor?: string
+  userName?: string
+  userImage?: string
+  messages?: string | string[]
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -37,15 +37,20 @@ export default defineNuxtModule<ModuleOptions>({
 
   // Default configuration options of the Nuxt module
   defaults: {
-    phone: '0123456789',
-    message: 'Hello',
-    position: 'left',
-    iconColor: '#25D366',
+    phone: '',
+    userName: 'Support',
+    messages: 'Hi there 👋 How can I help you ?',
   },
+
   setup(_options, _nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    _nuxt.options.runtimeConfig.public.whatsappWidget = _options
+    _nuxt.options.runtimeConfig.public.whatsappWidget = {
+      phone: _options.phone,
+      userName: _options.userName,
+      userImage: _options.userImage,
+      messages: _options.messages,
+    }
 
     _nuxt.options.css.push(resolver.resolve('./runtime/assets/css/fonts.css'))
 

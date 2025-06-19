@@ -1,11 +1,23 @@
 <script lang="ts" setup>
-const messages = ref<string[]>([
-  'Hi there 👋\n How can I help you ?',
-  'welcome to your support',
-  'this is a long text and should be break line by words.. lets test it an check the style. this is another line to cjeck the time position',
-])
+import { useNuxtApp, useRuntimeConfig } from '#app'
 
-const showMessage = ref(true)
+const props = defineProps<{
+  userImage?: string
+  userName?: string
+  phone: string
+  messages?: string | string[]
+}>()
+
+const config = useRuntimeConfig().public.whatsappWidget || {}
+const { $whatsappWidgetDefaultImage } = useNuxtApp()
+
+const image = props.userImage || config.userImage || $whatsappWidgetDefaultImage
+const name = props.userName || config.userName || 'Support'
+const phone = props.phone || config.phone
+const messages = props.messages || config.messages || 'Hi there 👋 How can I help you ?'
+const whatsAppLink = `https://wa.me/${phone}`
+
+const showMessage = ref(false)
 </script>
 
 <template>
@@ -30,12 +42,12 @@ const showMessage = ref(true)
     <div class="header">
       <div class="profile-picture">
         <img
-          src="../assets/icons/user-profile.svg"
+          :src="image"
           alt="WhatsApp Profile Picture"
         >
       </div>
       <div class="user-name">
-        User Name
+        {{ name }}
       </div>
     </div>
     <div class="chat">
@@ -46,7 +58,7 @@ const showMessage = ref(true)
     <div class="action">
       <a
         aria-label="Chat on WhatsApp"
-        href="https://wa.me/1XXXXXXXXXX"
+        :href="whatsAppLink"
         target="_blank"
       >
         Start Chat
