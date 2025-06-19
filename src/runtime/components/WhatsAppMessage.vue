@@ -1,16 +1,9 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 
-defineProps({
-  messages: {
-    type: Array<string>,
-    required: true,
-  },
-  companyName: {
-    type: String,
-    default: '',
-  },
-})
+const props = defineProps<{
+  messages: string | string[]
+}>()
 
 // const time = computed(() => new Date().getHours() + ':' + new Date().getMinutes())
 
@@ -21,18 +14,25 @@ const time = computed<string>(() => {
 
   return `${hours}:${mins}`
 })
+
+const normalizedMessages = computed(() => {
+  if (typeof props.messages === 'string') {
+    return [props.messages]
+  }
+  return props.messages
+})
 </script>
 
 <template>
   <div class="WhatsappChat__MessageContainer">
     <div
-      v-for="(item, i) in messages"
+      v-for="(message, i) in normalizedMessages"
       :key="i"
       style="opacity: 1"
       class="WhatsappChat__Message"
     >
       <div class="WhatsappChat__Text">
-        {{ item }}
+        {{ message }}
       </div>
       <div class="WhatsappChat__Time">
         {{ time }}
