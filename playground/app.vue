@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height: 200dvh;">
     <h1>Module Playground</h1>
     <WhatsAppWidget
       phone="+212645599227"

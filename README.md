@@ -49,12 +49,15 @@ export default defineNuxtConfig({
 
 ## ⚙️ Module Options
 
+## ⚙️ Module Options
+
 | Option       | Type                  | Required | Default                         | Description                                                |
 |--------------|-----------------------|----------|----------------------------------|------------------------------------------------------------|
 | `phone`      | `string`              | ✅       | —                                | WhatsApp number (international format, e.g., `+2126...`)   |
 | `userName`   | `string`              | ❌       | `"Support"`                      | Name of the agent shown in the widget                      |
 | `userImage`  | `string`              | ❌       | `"/icons/user-profile.svg"`      | Path or URL to agent avatar (prefer `/public` or full URL) |
-| `messages`   | `string \| string[]` | ❌       | `"Hi there 👋 How can I help you ?"`                       | One or more messages shown in the widget                   |-----------------------|----------|------------------------------------------------------------|widget                   |
+| `messages`   | `string \| string[]` | ❌       | `"Hi there 👋 How can I help you ?"` | One or more messages shown in the widget                   |
+| `label`      | `string`              | ❌       | `"Start Chat"`                   | Text shown on the button or entry point of the widget      |
 
 ---
 
