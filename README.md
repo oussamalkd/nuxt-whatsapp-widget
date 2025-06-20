@@ -74,6 +74,7 @@ The widget is injected automatically, but you can also use the component manuall
     user-name="Support Agent"
     user-image="/images/avatar.svg"
     :messages="['Hi there!', 'We are here to help.']"
+    label="Start Chat Now"
   />
 </template>
 ```
