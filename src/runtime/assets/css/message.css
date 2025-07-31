@@ -16,8 +16,8 @@
 
 .WhatsappChat__Text {
     max-width: 90%;
-    margin-right: 50px;
-
+    margin-inline-end: 50px;
+    text-align: start;
 }
 
 .WhatsappChat__Message:last-child::before {
@@ -26,19 +26,23 @@
     width: 10px;
     height: 10px;
     bottom: 0;
-    left: -6px;
+    inset-inline-start: -6px;
     border: 10px solid transparent;
     border-top-color: #fff;
     border-bottom: 0;
     border-left: 0;
-    transform: rotate(170deg);
+    transform: rotate(170deg) scaleX(1);
     z-index: 1;
+}
+
+:dir(rtl) .WhatsappChat__Message:last-child::before {
+  transform: rotate(-170deg) scaleX(-1);
 }
 
 .WhatsappChat__Time {
     position: absolute;
     color: rgba(0, 0, 0, .56);
-    right: 10px;
+    inset-inline-end: 10px;
     bottom: 5px;
     z-index: 2;
     font-size: 12px;
