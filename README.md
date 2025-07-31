@@ -1,6 +1,6 @@
 # 📞 Nuxt WhatsApp Widget
 
-A customizable and lightweight WhatsApp chat widget module for Nuxt 3. Let users contact you directly from your website using WhatsApp.
+A customizable and lightweight WhatsApp chat widget module for Nuxt 3 & 4. Let users contact you directly from your website using WhatsApp.
 
 ![npm](https://img.shields.io/npm/v/nuxt-whatsapp-widget?color=green)  
 ![license](https://img.shields.io/npm/l/nuxt-whatsapp-widget)  
