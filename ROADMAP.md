@@ -11,12 +11,11 @@ This roadmap outlines planned features and improvements for the `nuxt-whatsapp-w
 - [x] Support for single or multiple welcome messages
 - [x] Auto-injected widget and component override support
 - [x] Custom user name and avatar support
-
+- [x] RTL layout support (auto-detect)
 ---
 
 ## 🚧 In Progress
 
-- [ ] RTL layout support (auto-detect or config option)
 - [ ] Add dark mode styling (based on class or system)
 
 ---

@@ -15,6 +15,7 @@ A customizable and lightweight WhatsApp chat widget module for Nuxt 3. Let users
 - 👤 Customizable support agent name and avatar
 - ⚙️ Configurable via Nuxt config or component props
 - ⚡ Easy and automatic integration
+- 🌐 Built-in RTL support using logical CSS properties for full right-to-left compatibility
 
 ---
 
