@@ -5,7 +5,7 @@ export interface ModuleOptions {
   phone: string
   userName?: string
   userImage?: string
-  messages?: string | string[],
+  messages?: string | string[]
   label?: string
 }
 
@@ -14,7 +14,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-whatsapp-widget',
     configKey: 'whatsappWidget',
     compatibility: {
-      nuxt: '^3.0.0',
+      nuxt: '>=3.0.0-rc.11',
     },
   },
 
@@ -41,7 +41,7 @@ export default defineNuxtModule<ModuleOptions>({
     phone: '',
     userName: 'Support',
     messages: 'Hi there 👋 How can I help you ?',
-    label: 'Start Chat'
+    label: 'Start Chat',
   },
 
   setup(_options, _nuxt) {
@@ -52,7 +52,7 @@ export default defineNuxtModule<ModuleOptions>({
       userName: _options.userName,
       userImage: _options.userImage,
       messages: _options.messages,
-      label: _options.label
+      label: _options.label,
     }
 
     _nuxt.options.css.push(resolver.resolve('./runtime/assets/css/fonts.css'))

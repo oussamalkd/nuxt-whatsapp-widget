@@ -37,7 +37,7 @@ const showMessage = ref(false)
         >
       </div>
     </div>
-  
+
     <div
       class="message-box"
       :class="{ active: showMessage }"

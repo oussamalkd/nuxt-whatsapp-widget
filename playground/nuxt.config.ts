@@ -1,5 +1,7 @@
 export default defineNuxtConfig({
+
   modules: ['../src/module'],
+
   devtools: { enabled: true },
   app: {
     head: {
@@ -7,6 +9,6 @@ export default defineNuxtConfig({
         dir: 'ltr',
       },
     },
-  },
+  }, compatibilityDate: 'latest',
   whatsappWidget: {},
 })
