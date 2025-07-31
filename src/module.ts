@@ -49,10 +49,10 @@ export default defineNuxtModule<ModuleOptions>({
 
     _nuxt.options.runtimeConfig.public.whatsappWidget = {
       phone: _options.phone,
-      userName: _options.userName,
+      userName: _options.userName || '',
       userImage: _options.userImage,
-      messages: _options.messages,
-      label: _options.label,
+      messages: _options.messages || '',
+      label: _options.label || '',
     }
 
     _nuxt.options.css.push(resolver.resolve('./runtime/assets/css/fonts.css'))

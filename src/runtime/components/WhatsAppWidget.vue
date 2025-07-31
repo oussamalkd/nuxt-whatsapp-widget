@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useNuxtApp, useRuntimeConfig } from '#app'
+import { ref } from 'vue';
 
 const props = defineProps<{
   userImage?: string
