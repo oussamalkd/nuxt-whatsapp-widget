@@ -8,6 +8,19 @@ A customizable and lightweight WhatsApp chat widget module for Nuxt 3 & 4. Let u
 
 ---
 
+## ⚠️ Nuxt Compatibility
+
+This module supports the following Nuxt versions:
+
+| Nuxt Version         | Use Module Version     |
+|----------------------|------------------------|
+| **Nuxt < 3.17.0**     | `nuxt-whatsapp-widget@^1.3.2` |
+| **Nuxt ≥ 3.17.0**     | `nuxt-whatsapp-widget@^2.0.0` |
+
+> **Note:** Starting from `v2.0.0`, this module uses `<NuxtTime>` internally, which requires Nuxt `3.17.0` or higher.
+
+---
+
 ## ✨ Features
 
 - 📱 Floating WhatsApp chat widget
@@ -21,10 +34,20 @@ A customizable and lightweight WhatsApp chat widget module for Nuxt 3 & 4. Let u
 
 ## 📦 Installation
 
+#### For Nuxt 3.17 or later:
+
 ```bash
-npm install nuxt-whatsapp-widget
+npm install nuxt-whatsapp-widget@^1.3.2
 # or
 yarn add nuxt-whatsapp-widget
+```
+
+#### For Nuxt versions earlier than 3.17:
+
+```bash
+npm install nuxt-whatsapp-widget@^1.3.2
+# or
+yarn add nuxt-whatsapp-widget@^1.3.2
 ```
 
 ---
