@@ -45,9 +45,11 @@
     background-position: center;
     transition: all 0.3s ease-in-out;
     opacity: 0;
+    display: none;
 }
 .message-box.active {
     opacity: 1;
+    display: flex;
     transform: translateY(0);
 }
 .message-box .header {

@@ -6,7 +6,7 @@
     </button>
     <WhatsAppWidget
       phone="+212645599227"
-      :messages=" 'how can I help you'"
+      :messages=" ['how can I help you', 'testt hello']"
     />
   </div>
 </template>

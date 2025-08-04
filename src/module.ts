@@ -14,7 +14,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-whatsapp-widget',
     configKey: 'whatsappWidget',
     compatibility: {
-      nuxt: '>=3.0.0-rc.11',
+      nuxt: '>=3.17.0',
     },
   },
 

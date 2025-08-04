@@ -7,16 +7,8 @@ const props = withDefaults(
   }>(),
   {
     messages: 'Hi there 👋 How can I help you ?',
-  }
+  },
 )
-
-const time = computed<string>(() => {
-  const date = new Date()
-  const hours = date.getHours().toString().padStart(2, '0')
-  const mins = date.getMinutes().toString().padStart(2, '0')
-
-  return `${hours}:${mins}`
-})
 
 const normalizedMessages = computed(() => {
   return typeof props.messages === 'string'
@@ -37,7 +29,12 @@ const normalizedMessages = computed(() => {
         {{ message }}
       </div>
       <div class="WhatsappChat__Time">
-        {{ time }}
+        <NuxtTime
+          :datetime="Date.now()"
+          hour="2-digit"
+          minute="2-digit"
+          hour-cycle="h23"
+        />
       </div>
     </div>
   </div>

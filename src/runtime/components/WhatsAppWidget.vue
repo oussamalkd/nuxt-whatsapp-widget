@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useNuxtApp, useRuntimeConfig } from '#app'
-import { ref } from 'vue';
+import { ref, computed } from 'vue'
 
 const props = defineProps<{
   userImage?: string
@@ -13,18 +13,36 @@ const props = defineProps<{
 const config = useRuntimeConfig().public.whatsappWidget || {}
 const { $whatsappWidgetDefaultImage } = useNuxtApp()
 
-const image = props.userImage || config.userImage || $whatsappWidgetDefaultImage
-const name = props.userName || config.userName || 'Support'
-const phone = props.phone || config.phone
-const messages = props.messages || config.messages || 'Hi there 👋 How can I help you ?'
-const label = props.label || config.label || 'Start Chat'
-const whatsAppLink = `https://wa.me/${phone}`
+const image = computed(() =>
+  props.userImage || config.userImage || $whatsappWidgetDefaultImage,
+)
 
+const name = computed(() =>
+  props.userName || config.userName || 'Support',
+)
+
+const phone = computed(() =>
+  props.phone || config.phone,
+)
+
+const messages = computed(() =>
+  props.messages || config.messages || 'Hi there 👋 How can I help you ?',
+)
+
+const label = computed(() =>
+  props.label || config.label || 'Start Chat',
+)
+
+const whatsAppLink = computed(() =>
+  `https://wa.me/${phone.value}`,
+)
 const showMessage = ref(false)
 </script>
 
 <template>
-  <div class="whatsapp-widget-container">
+  <div
+    class="whatsapp-widget-container"
+  >
     <div
       class="whatsapp-widget"
       @click="showMessage = !showMessage"
