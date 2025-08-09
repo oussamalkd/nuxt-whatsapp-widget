@@ -37,7 +37,7 @@ This module supports the following Nuxt versions:
 #### For Nuxt 3.17 or later:
 
 ```bash
-npm install nuxt-whatsapp-widget@^1.3.2
+npm install nuxt-whatsapp-widget
 # or
 yarn add nuxt-whatsapp-widget
 ```
