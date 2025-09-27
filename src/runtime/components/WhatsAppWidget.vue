@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { useNuxtApp, useRuntimeConfig } from '#app'
 import { computed, onMounted, useTemplateRef } from 'vue'
-import { useToggleMessage } from '../composables/useToggleMessage';
-import { onClickOutside } from '@vueuse/core';
+import { useToggleMessage } from '../composables/useToggleMessage'
+import { onClickOutside } from '@vueuse/core'
 
 const props = defineProps<{
   userImage?: string
@@ -39,7 +39,7 @@ const whatsAppLink = computed(() =>
   `https://wa.me/${phone.value}`,
 )
 
-const { status, toggleStatus } = useToggleMessage()
+const { status } = useToggleMessage()
 
 const target = useTemplateRef<HTMLElement>('target')
 
@@ -52,8 +52,8 @@ onMounted(() => {
 
 <template>
   <div
-    class="whatsapp-widget-container"
     ref="target"
+    class="whatsapp-widget-container"
   >
     <div
       class="whatsapp-widget"
@@ -85,7 +85,12 @@ onMounted(() => {
             {{ name }}
           </div>
         </div>
-        <div class="header-action" @click="() => status = false">x</div>
+        <div
+          class="header-action"
+          @click="() => status = false"
+        >
+          x
+        </div>
       </div>
       <div class="chat">
         <WhatsAppMessage
