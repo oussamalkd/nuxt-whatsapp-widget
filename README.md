@@ -73,8 +73,6 @@ export default defineNuxtConfig({
 
 ## ⚙️ Module Options
 
-## ⚙️ Module Options
-
 | Option       | Type                  | Required | Default                         | Description                                                |
 |--------------|-----------------------|----------|----------------------------------|------------------------------------------------------------|
 | `phone`      | `string`              | ✅       | —                                | WhatsApp number (international format, e.g., `+2126...`)   |

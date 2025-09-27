@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { useNuxtApp, useRuntimeConfig } from '#app'
-import { ref, computed } from 'vue'
+import { computed, onMounted, useTemplateRef } from 'vue'
+import { useToggleMessage } from '../composables/useToggleMessage'
+import { onClickOutside } from '@vueuse/core'
 
 const props = defineProps<{
   userImage?: string
@@ -36,16 +38,26 @@ const label = computed(() =>
 const whatsAppLink = computed(() =>
   `https://wa.me/${phone.value}`,
 )
-const showMessage = ref(false)
+
+const { status } = useToggleMessage()
+
+const target = useTemplateRef<HTMLElement>('target')
+
+onMounted(() => {
+  onClickOutside(target, () => {
+    status.value = false
+  })
+})
 </script>
 
 <template>
   <div
+    ref="target"
     class="whatsapp-widget-container"
   >
     <div
       class="whatsapp-widget"
-      @click="showMessage = !showMessage"
+      @click="status = !status"
     >
       <div class="icon">
         <img
@@ -59,17 +71,25 @@ const showMessage = ref(false)
 
     <div
       class="message-box"
-      :class="{ active: showMessage }"
+      :class="{ active: status }"
     >
       <div class="header">
-        <div class="profile-picture">
-          <img
-            :src="image"
-            alt="WhatsApp Profile Picture"
-          >
+        <div class="header-info">
+          <div class="profile-picture">
+            <img
+              :src="image"
+              alt="WhatsApp Profile Picture"
+            >
+          </div>
+          <div class="user-name">
+            {{ name }}
+          </div>
         </div>
-        <div class="user-name">
-          {{ name }}
+        <div
+          class="header-action"
+          @click="() => status = false"
+        >
+          x
         </div>
       </div>
       <div class="chat">
